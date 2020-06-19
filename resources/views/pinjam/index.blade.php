@@ -6,6 +6,8 @@
         <!-- Back Button -->
         <div class="col-md-12 ">
             <a href=" {{url('home')}} " class="btn btn-primary">Kembali</a>
+            <h2 align="center"><strong>Form Pengajuan Peminjaman</strong></h3>
+
         </div>
 
         <!-- Breadcrumb -->

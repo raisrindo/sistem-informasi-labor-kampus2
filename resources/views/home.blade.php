@@ -2,11 +2,26 @@
 
 @section('content')
 <div class="container">
+    <div class="row">
+        <!-- Menampilkan judul Halaman -->
+        <div class="col-md-12">
+            <h2 align="center"><strong>Daftar Laboratorium</strong></h3>
+        </div>
+
+        <!-- Breadcrumb -->
+        <div class="col-md-12 mt-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active"><a href="{{url('home')}} ">Home</a></li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
     <div class="row justify-content-center">
-
+        <!-- menampilkan daftar ruangan -->
         @foreach($ruangans as $ruangan)
-        <div class="col-md-4 mt-4">
-
+        <div class="col-md-4 mt-3">
             <div class="card" style="width: 18rem;">
                 <img src="{{ url('uploads')}}/{{$ruangan->gambar}} " class="card-img-top" alt="gambar ruangan">
                 <div class="card-body">
@@ -17,10 +32,9 @@
                     <a href="{{url('pinjam')}}/{{$ruangan->id}}" class="btn btn-success">Pinjam</a>
                 </div>
             </div>
-
         </div>
-
         @endforeach
+
 
 
     </div>
