@@ -16,9 +16,10 @@ class CreatePeminjamenTable extends Migration
         Schema::create('peminjamen', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_id');
-            $table->date('tanggal_pinjam');
-            $table->date('tanggal_pakai');
-            $table->date('tanggal_selesaipakai');
+            $table->datetime('tanggal');
+            $table->date('tanggal_dipinjam');
+            $table->time('waktu_pakai');
+            $table->time('waktu_selesai');
             $table->timestamps();
         });
     }
