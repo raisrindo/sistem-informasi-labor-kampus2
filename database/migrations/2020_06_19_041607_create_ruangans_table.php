@@ -18,6 +18,7 @@ class CreateRuangansTable extends Migration
             $table->string('nama_ruangan');
             $table->string('kapasitas');
             $table->string('keterangan');
+            $table->text('gambar');
             $table->timestamps();
         });
     }
