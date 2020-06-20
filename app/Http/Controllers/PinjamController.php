@@ -8,6 +8,9 @@ use App\Peminjaman;
 // use App\Pesanan_detail;
 use Auth;
 use Carbon\Carbon;
+use App\User;
+// use Alert;
+// use SweetAlert;
 
 class PinjamController extends Controller
 {
@@ -49,6 +52,16 @@ class PinjamController extends Controller
         // $peminjaman_detail->user_id  = Auth::user()->id;
 
 
+        //validasi apakah nim/nip dan nomor hp sudah diisi
+        $user = User::where('id', Auth::user()->id)->First();
+
+        if (empty($user->nomorinduk)) {
+            return redirect('profile');
+        }
+        if (empty($user->nomorhp)) {
+            return redirect('profile');
+        }
+
         // versi 2
         $ruangan = Ruangan::where('id', $id)->First();
         $tanggal = Carbon::now();
@@ -56,6 +69,7 @@ class PinjamController extends Controller
         $peminjaman = new Peminjaman;
         $peminjaman->user_id = Auth::user()->id;
         $peminjaman->user_nama = Auth::user()->name;
+        $peminjaman->user_nomorhp = Auth::user()->nomorhp;
         $peminjaman->ruangan_id  = $ruangan->id;
         $peminjaman->ruangan_nama = $ruangan->nama_ruangan;
         $peminjaman->tanggal = $tanggal;
@@ -65,6 +79,7 @@ class PinjamController extends Controller
         $peminjaman->status = 0;
         $peminjaman->save();
 
+        // Alert::success('Form Telah Terkirim', 'Pengajuan Peminjaman Berhasil');
         return redirect('home');
     }
 }

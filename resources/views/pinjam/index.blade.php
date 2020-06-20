@@ -99,7 +99,7 @@
                                     <label for="waktu_selesai">Waktu Selesai Pemakaian :</label>
                                     <input type="time" class="form-control" required id="waktu_selesai" placeholder="Masukkan Waktu Selesai Pemakaian " name="waktu_selesai">
                                 </div>
-                                <button type="submit" class="btn btn-success">Ajukan Peminjaman!</button>
+                                <button type="submit" class="btn btn-success" onclick="return confirm('Anda Yakin Form Peminjaman Anda Sudah Benar ?'); ">Ajukan Peminjaman!</button>
                             </form>
 
                         </div>

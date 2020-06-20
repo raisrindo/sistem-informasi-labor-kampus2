@@ -50,3 +50,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('pinjam/{id}', 'pinjamController@index');
 Route::post('pinjam/{id}', 'pinjamController@pinjam');
+Route::get('profile', 'ProfileController@index');
+Route::post('profile', 'ProfileController@update');
