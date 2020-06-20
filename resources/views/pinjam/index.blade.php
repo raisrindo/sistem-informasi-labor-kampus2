@@ -48,7 +48,9 @@
                                         <td>:</td>
                                         <td>{{$ruangan->keterangan}}</td>
                                     </tr>
-                                    <form action="" method="post">
+
+                                    <!-- <form action="{{url('pinjam')}}/{{$ruangan->id}}" method="post">
+                                        @csrf
                                         <tr>
                                             <td>Tanggal Peminjaman</td>
                                             <td>:</td>
@@ -78,13 +80,27 @@
                                                 <button type="submit" class="btn btn-success">Ajukan Peminjaman!</button>
                                             </td>
                                         </tr>
-
-                                    </form>
-
+                                    </form> -->
 
                                 </tbody>
                             </table>
 
+                            <form action="{{url('pinjam')}}/{{$ruangan->id}}" method="post">
+                                @csrf
+                                <div class="form-group">
+                                    <label for="tanggal_dipinjam">Tanggal Peminjaman :</label>
+                                    <input type="date" class="form-control" required id="tanggal_dipinjam" placeholder="Masukkan Tanggal Peminjaman " name="tanggal_dipinjam">
+                                </div>
+                                <div class="form-group">
+                                    <label for="waktu_pakai">Waktu Memulai Pemakaian :</label>
+                                    <input type="time" class="form-control" required id="waktu_pakai" placeholder="Masukkan Waktu Memulai Pemakaian " name="waktu_pakai">
+                                </div>
+                                <div class="form-group">
+                                    <label for="waktu_selesai">Waktu Selesai Pemakaian :</label>
+                                    <input type="time" class="form-control" required id="waktu_selesai" placeholder="Masukkan Waktu Selesai Pemakaian " name="waktu_selesai">
+                                </div>
+                                <button type="submit" class="btn btn-success">Ajukan Peminjaman!</button>
+                            </form>
 
                         </div>
                     </div>

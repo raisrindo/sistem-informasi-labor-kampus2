@@ -16,9 +16,12 @@ class CreatePeminjamanDetailsTable extends Migration
         Schema::create('peminjaman_details', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('ruangan_id');
+            $table->string('ruangan_nama');
             $table->integer('peminjaman_id');
-            $table->date('tanggal_pakai');
-            $table->date('tanggal_selesaipakai');
+            $table->string('peminjam_nama');
+            $table->date('tanggal_dipinjam');
+            $table->time('waktu_pakai');
+            $table->time('waktu_selesai');
             $table->timestamps();
         });
     }

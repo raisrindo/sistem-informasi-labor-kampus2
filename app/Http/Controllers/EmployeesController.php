@@ -16,7 +16,7 @@ class EmployeesController extends Controller
     {
         $employees = Employee::all();
         // return view ('employees/index', compact('employees') );
-        return view ('employees/index', ['employees' => $employees] );
+        return view('employees/index', ['employees' => $employees]);
     }
 
     /**
@@ -26,7 +26,7 @@ class EmployeesController extends Controller
      */
     public function create()
     {
-        return view ('employees/create');
+        return view('employees/create');
     }
 
     /**
@@ -55,16 +55,16 @@ class EmployeesController extends Controller
 
 
         $request->validate([
-            'nama'=>'required',
-            'nip'=>'required|size:6'
-           
+            'nama' => 'required',
+            'nip' => 'required|size:6'
+
         ]);
 
         //cara 3       
         Employee::create($request->all());
 
-        return redirect('/employees') -> with ('status', 'Data Berhasil Ditambahkan!');
-        
+        return redirect('/employees')->with('status', 'Data Berhasil Ditambahkan!');
+
         //return $request;
     }
 
@@ -76,7 +76,7 @@ class EmployeesController extends Controller
      */
     public function show(Employee $employee)
     {
-        return view ('employees/show', compact('employee'));
+        return view('employees/show', compact('employee'));
     }
 
     /**
@@ -99,14 +99,14 @@ class EmployeesController extends Controller
      */
     public function update(Request $request, Employee $employee)
     {
-        Employee::where('id',$employee->id)
+        Employee::where('id', $employee->id)
             ->update([
-                'nama'=>$request->nama,
-                'nip'=>$request->nip,
-                'email'=>$request->email,
-                'posisi'=>$request->posisi,
+                'nama' => $request->nama,
+                'nip' => $request->nip,
+                'email' => $request->email,
+                'posisi' => $request->posisi,
             ]);
-            return redirect('/employees') -> with ('status', 'Data Berhasil Dirubah!');
+        return redirect('/employees')->with('status', 'Data Berhasil Dirubah!');
     }
 
     /**
@@ -119,8 +119,6 @@ class EmployeesController extends Controller
     {
         //return $employee;
         Employee::destroy($employee->id);
-        return redirect('/employees') -> with ('status', 'Data Berhasil Dihapus!');
-
-
+        return redirect('/employees')->with('status', 'Data Berhasil Dihapus!');
     }
 }
