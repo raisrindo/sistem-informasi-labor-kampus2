@@ -120,7 +120,7 @@ class RuanganController extends Controller
             $tujuan_upload = 'uploads';
             $file->move($tujuan_upload, $nama_file);
         }
-        
+
         Ruangan::where('id', $ruangan->id)
             ->update([
                 'nama_ruangan' => $request->nama_ruangan,

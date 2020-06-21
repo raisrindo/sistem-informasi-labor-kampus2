@@ -32,4 +32,10 @@ class AdminController extends Controller
         $peminjaman = Peminjaman::where('status', 0)->get();
         return view('admin/pengajuan', ['peminjaman' => $peminjaman]);
     }
+
+    public function persetujuan()
+    {
+        $peminjaman = Peminjaman::where('status', 1)->get();
+        return view('admin/persetujuan', ['peminjaman' => $peminjaman]);
+    }
 }

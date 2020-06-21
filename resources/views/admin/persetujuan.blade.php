@@ -6,7 +6,7 @@
         <!-- Menampilkan judul Halaman -->
         <div class="col-md-12">
             <h3 align="center"><strong>Dasbor Admin</strong></h3>
-            <h4 align="center"><strong>"Data Pengajuan Peminjaman"</strong></h4>
+            <h4 align="center"><strong>"Data Pengajuan Peminjaman Yang Telah Disetujui"</strong></h4>
         </div>
     </div>
 
@@ -41,20 +41,13 @@
                         <td>{{$pjm->waktu_pakai}}</td>
                         <td>{{$pjm->waktu_selesai}}</td>
                         <td>
-                            <!-- <a href="" class="badge badge-success">Setujui !</a> -->
-                            <!-- <a href="" class="badge badge-danger">hapus</a> -->
-
-                            <form action="/admin/pengajuan/{{$pjm->id}}" method="post" class="d-inline">
+                            <!-- <a href="" class="badge badge-danger">Batal Setujui !</a> -->
+                            <form action="/admin/persetujuan/{{$pjm->id}}" method="post" class="d-inline">
                                 @method ('patch')
                                 @csrf
-                                <button type="submit" style="cursor:pointer" class="badge badge-success" onclick="return confirm('Anda Yakin Ingin Menyetujui Peminjaman ?'); ">Setujui !</button>
+                                <button type="submit" style="cursor:pointer" class="badge badge-danger" onclick="return confirm('Anda Yakin Membatalkan Persetujuan Peminjaman ?'); ">Batal Setujui !</button>
                             </form>
 
-                            <form action="/admin/pengajuan/{{$pjm->id}}" method="post" class="d-inline">
-                                @method('delete')
-                                @csrf
-                                <button type="submit" style="cursor:pointer" class="badge badge-danger" onclick="return confirm('Anda Yakin Ingin Menghapus Data Peminjaman ?'); ">Delete !</button>
-                            </form>
                         </td>
                     </tr>
 

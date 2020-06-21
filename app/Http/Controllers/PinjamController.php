@@ -91,6 +91,32 @@ class PinjamController extends Controller
         return redirect('/admin/pengajuan')->with('status', 'Data Berhasil Dihapus!');
     }
 
+    // public function approve(Request $request, Peminjaman $peminjaman)
+    public function approve(Peminjaman $peminjaman)
+    {
+
+        // $nama_file = $ruangan->gambar;
+
+        Peminjaman::where('id', $peminjaman->id)
+            ->update([
+                'status' => 1,
+            ]);
+
+        return redirect('/admin/pengajuan')->with('status', 'Data Berhasil Dihapus!');
+    }
+    public function disapprove(Peminjaman $peminjaman)
+    {
+
+        // $nama_file = $ruangan->gambar;
+
+        Peminjaman::where('id', $peminjaman->id)
+            ->update([
+                'status' => 0,
+            ]);
+
+        return redirect('/admin/persetujuan')->with('status', 'Data Berhasil Dihapus!');
+    }
+
 
     //
 }

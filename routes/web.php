@@ -49,6 +49,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Auth::routes();
+
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('pinjam/{id}', 'pinjamController@index');
 Route::post('pinjam/{id}', 'pinjamController@pinjam');
@@ -60,7 +61,11 @@ Route::get('/admin', 'AdminController@index');
 
 Route::get('/admin/create', 'AdminController@create');
 Route::get('/admin/pengajuan', 'AdminController@pengajuan');
+Route::get('admin/persetujuan', 'AdminController@persetujuan');
+
 Route::delete('/admin/pengajuan/{peminjaman}', 'PinjamController@destroy');
+Route::patch('/admin/pengajuan/{peminjaman}', 'PinjamController@approve');
+Route::patch('/admin/persetujuan/{peminjaman}', 'PinjamController@disapprove');
 
 Route::post('/ruangan', 'RuanganController@store');
 Route::delete('/admin/{ruangan}', 'RuanganController@destroy');

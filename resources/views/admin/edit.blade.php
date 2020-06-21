@@ -18,7 +18,7 @@
 
     <div class="row justify-content-center ">
         <div class="col-md-8 mt-3">
-            <form method="post" action="/admin/{{$ruangan->id}}"  enctype="multipart/form-data">
+            <form method="post" action="/admin/{{$ruangan->id}}" enctype="multipart/form-data">
                 @method ('patch')
                 @csrf
 
@@ -49,7 +49,7 @@
 
                 <div class="form-group">
                     <label for="file">Gambar</label><br>
-                    <input type="file" class="@error('keterangan') is-invalid @enderror" id="file" placeholder="Masukkan Gambar Ruangan" name="file"  >
+                    <input type="file" class="@error('keterangan') is-invalid @enderror" id="file" placeholder="Masukkan Gambar Ruangan" name="file">
                     @error('file')
                     <div class="invalid-feedback">{{$message}}</div>
                     @enderror
