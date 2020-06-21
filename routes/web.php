@@ -60,6 +60,7 @@ Route::get('/admin', 'AdminController@index');
 
 Route::get('/admin/create', 'AdminController@create');
 Route::get('/admin/pengajuan', 'AdminController@pengajuan');
+Route::delete('/admin/pengajuan/{peminjaman}', 'PinjamController@destroy');
 
 Route::post('/ruangan', 'RuanganController@store');
 Route::delete('/admin/{ruangan}', 'RuanganController@destroy');

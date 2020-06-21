@@ -83,4 +83,14 @@ class PinjamController extends Controller
         // Alert::success('Form Telah Terkirim', 'Pengajuan Peminjaman Berhasil');
         return redirect('home');
     }
+
+    public function destroy(Peminjaman $peminjaman)
+    {
+        //return $employee;
+        Peminjaman::destroy($peminjaman->id);
+        return redirect('/admin/pengajuan')->with('status', 'Data Berhasil Dihapus!');
+    }
+
+
+    //
 }

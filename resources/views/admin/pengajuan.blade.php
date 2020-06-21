@@ -42,7 +42,12 @@
                         <td>{{$pjm->waktu_selesai}}</td>
                         <td>
                             <a href="" class="badge badge-success">disetujui</a>
-                            <a href="" class="badge badge-danger">hapus</a>
+                            <!-- <a href="" class="badge badge-danger">hapus</a> -->
+                            <form action="/admin/pengajuan/{{$pjm->id}}" method="post" class="d-inline">
+                                @method('delete')
+                                @csrf
+                                <button type="submit" class="badge badge-danger" onclick="return confirm('Anda Yakin Ingin Menghapus Data Peminjaman ?'); ">Delete</button>
+                            </form>
                         </td>
                     </tr>
 
