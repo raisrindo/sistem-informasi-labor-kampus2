@@ -43,6 +43,8 @@ Route::patch('/employees/{employee}', 'EmployeesController@update');
 */
 
 //versi 2
+
+//user
 Route::get('/', function () {
     return view('welcome');
 });
@@ -52,9 +54,15 @@ Route::get('pinjam/{id}', 'pinjamController@index');
 Route::post('pinjam/{id}', 'pinjamController@pinjam');
 Route::get('profile', 'ProfileController@index');
 Route::post('profile', 'ProfileController@update');
+
+//admin
 Route::get('/admin', 'AdminController@index');
+
 Route::get('/admin/create', 'AdminController@create');
+Route::get('/admin/pengajuan', 'AdminController@pengajuan');
+
 Route::post('/ruangan', 'RuanganController@store');
 Route::delete('/admin/{ruangan}', 'RuanganController@destroy');
+
 Route::get('/admin/{ruangan}', 'RuanganController@edit');
 Route::patch('/admin/{ruangan}', 'RuanganController@update');

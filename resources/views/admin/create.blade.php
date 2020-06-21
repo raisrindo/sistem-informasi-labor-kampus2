@@ -1,32 +1,20 @@
-@extends('layouts.app')
+@extends('admin.layouts.app')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
+
+        <!-- tombol back -->
+        <div class="col-md-10 justify-content-center">
+            <a href="/admin" class="btn btn-primary">Kembali</a>
+        </div>
+
         <!-- Menampilkan judul Halaman -->
         <div class="col-md-12">
             <h2 align="center"><strong>Form Tambah Data Ruangan</strong></h3>
         </div>
 
-        <!-- Navbar -->
-        <div class="col-md-12 mt-3">
-            <ul class="nav justify-content-center breadcrumb">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{url('admin')}}">Daftar Laboratorium</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Daftar Karyawan</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Daftar Pengajuan Peminjaman</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Daftar Peminjaman yang Diterima</a>
-                </li>
-
-            </ul>
-        </div>
-
+        
     </div>
 
     <div class="row justify-content-center ">
@@ -67,7 +55,7 @@
                     @enderror
                 </div>
 
-                <button type="submit" class="btn btn-primary mt-3">Tambah Data!</button>
+                <button type="submit" class="btn btn-success mt-3">Tambah Data!</button>
 
             </form>
 
