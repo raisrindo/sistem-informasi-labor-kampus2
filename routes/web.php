@@ -52,3 +52,6 @@ Route::get('pinjam/{id}', 'pinjamController@index');
 Route::post('pinjam/{id}', 'pinjamController@pinjam');
 Route::get('profile', 'ProfileController@index');
 Route::post('profile', 'ProfileController@update');
+Route::get('/admin', 'AdminController@index');
+Route::get('/admin/create', 'AdminController@create');
+Route::post('/ruangan', 'RuanganController@store');
