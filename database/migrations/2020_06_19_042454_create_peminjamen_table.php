@@ -17,6 +17,7 @@ class CreatePeminjamenTable extends Migration
             $table->bigIncrements('id');
             $table->integer('user_id');
             $table->string('user_nama');
+            $table->string('user_nomorinduk');
             $table->string('user_nomorhp');
             $table->integer('ruangan_id');
             $table->string('ruangan_nama');

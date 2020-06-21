@@ -17,6 +17,7 @@
                     <tr>
                         <th scope="col">Urutan Meminjam</th>
                         <th scope="col">Peminjam</th>
+                        <th scope="col">NIP/NIM Peminjam</th>
                         <th scope="col">Kontak Peminjam</th>
                         <th scope="col">Nama Ruangan</th>
                         <th scope="col">Tanggal Meminjam</th>
@@ -32,6 +33,7 @@
                     <tr>
                         <th scope="row">{{$loop->iteration}}</th>
                         <td>{{$pjm->user_nama}}</td>
+                        <td>{{$pjm->user_nomorinduk}}</td>
                         <td>{{$pjm->user_nomorhp}}</td>
                         <td>{{$pjm->ruangan_nama}}</td>
                         <td>{{$pjm->tanggal}}</td>

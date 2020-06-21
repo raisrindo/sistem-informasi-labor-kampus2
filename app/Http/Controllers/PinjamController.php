@@ -69,6 +69,7 @@ class PinjamController extends Controller
         $peminjaman = new Peminjaman;
         $peminjaman->user_id = Auth::user()->id;
         $peminjaman->user_nama = Auth::user()->name;
+        $peminjaman->user_nomorinduk = Auth::user()->nomorinduk;
         $peminjaman->user_nomorhp = Auth::user()->nomorhp;
         $peminjaman->ruangan_id  = $ruangan->id;
         $peminjaman->ruangan_nama = $ruangan->nama_ruangan;
