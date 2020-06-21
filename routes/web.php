@@ -56,6 +56,8 @@ Route::post('pinjam/{id}', 'pinjamController@pinjam');
 Route::get('profile', 'ProfileController@index');
 Route::post('profile', 'ProfileController@update');
 
+Route::get('info/{id}', 'pinjamController@info');
+
 //admin
 Route::get('/admin', 'AdminController@index');
 

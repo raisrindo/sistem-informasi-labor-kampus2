@@ -26,6 +26,34 @@ class PinjamController extends Controller
 
         return view('pinjam/index', compact('ruangan'));
     }
+
+    public function info($id)
+    {
+        // $ruangan = Ruangan::where('id', $id)->First();
+        // return view('pinjam/info', compact('ruangan'));
+
+        // $ruangan = Ruangan::where('id', $id)->First();
+
+        // $ruangan_nama = Ruangan::where([
+        //     ['id', $ruangan],
+        //     ['ruangan_nama', $ruangan],
+        // ])->get();
+
+        // $peminjaman = Peminjaman::where([
+        //     ['status', 1],
+        //     ['ruangan_id', $ruangan_nama],
+        // ])->get();
+
+        $ruangan = Ruangan::where('id', $id)->First();
+
+        $peminjaman = Peminjaman::where([
+            ['status', 1],
+            ['ruangan_id', $id]
+        ])->get();
+
+        return view('pinjam/info', compact('ruangan'), ['peminjaman' => $peminjaman]);
+    }
+
     public function pinjam(Request $request, $id)
     {
 

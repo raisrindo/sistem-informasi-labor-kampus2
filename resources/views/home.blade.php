@@ -28,7 +28,7 @@
                     <h5 class="card-title"> <strong>{{$ruangan->nama_ruangan}}</strong></h5>
                     <h6 class="card-text">Kapasitas : {{$ruangan->kapasitas}} Orang </h6>
                     <p class="card-text">Lokasi : {{$ruangan->keterangan}} </p>
-                    <a href="#" class="btn btn-primary col-md-8">Informasi</a>
+                    <a href="{{url('info')}}/{{$ruangan->id}}" class="btn btn-primary col-md-8">Informasi</a>
                     <a href="{{url('pinjam')}}/{{$ruangan->id}}" class="btn btn-success">Pinjam</a>
                 </div>
             </div>
