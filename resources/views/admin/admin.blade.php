@@ -44,8 +44,14 @@
                     <h5 class="card-title"> <strong>{{$ruangan->nama_ruangan}}</strong></h5>
                     <h6 class="card-text">Kapasitas : {{$ruangan->kapasitas}} Orang </h6>
                     <p class="card-text">Lokasi : {{$ruangan->keterangan}} </p>
-                    <a href="#" class="btn btn-success col-md-8">Edit</a>
-                    <a href="{{url('pinjam')}}/{{$ruangan->id}}" class="btn btn-danger">Hapus</a>
+                    <!-- <a href="#" class="btn btn-success col-md-8">Edit</a> -->
+                    <!-- <a href="{{url('pinjam')}}/{{$ruangan->id}}" class="btn btn-danger">Hapus</a> -->
+                    <a href="/admin/{{$ruangan->id}}" class="btn btn-success col-md-8">Edit</a>
+                    <form action="/admin/{{$ruangan->id}}" method="post" class="d-inline">
+                        @method('delete')
+                        @csrf
+                        <button type="submit" class="btn btn-danger" onclick="return confirm('Anda Yakin Ingin Menghapus Data Ruangan ?'); ">Delete</button>
+                    </form>
                 </div>
             </div>
         </div>

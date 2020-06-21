@@ -55,3 +55,6 @@ Route::post('profile', 'ProfileController@update');
 Route::get('/admin', 'AdminController@index');
 Route::get('/admin/create', 'AdminController@create');
 Route::post('/ruangan', 'RuanganController@store');
+Route::delete('/admin/{ruangan}', 'RuanganController@destroy');
+Route::get('/admin/{ruangan}', 'RuanganController@edit');
+Route::patch('/admin/{ruangan}', 'RuanganController@update');

@@ -94,4 +94,41 @@ class RuanganController extends Controller
 
         //return $request;
     }
+
+    public function destroy(Ruangan $ruangan)
+    {
+        //return $employee;
+        Ruangan::destroy($ruangan->id);
+        return redirect('/admin')->with('status', 'Data Berhasil Dihapus!');
+    }
+
+    public function edit(Ruangan $ruangan)
+    {
+        return view('admin/edit', compact('ruangan'));
+    }
+
+    public function update(Request $request, Ruangan $ruangan)
+    {
+        if (empty($request->file)) {
+            $nama_file = $ruangan->gambar;
+        }
+        if (!empty($request->file)) {
+            // menyimpan data file yang diupload ke variabel $file
+            $file = $request->file('file');
+            $nama_file = $file->getClientOriginalName();
+            // isi dengan nama folder tempat kemana file diupload
+            $tujuan_upload = 'uploads';
+            $file->move($tujuan_upload, $nama_file);
+        }
+        
+        Ruangan::where('id', $ruangan->id)
+            ->update([
+                'nama_ruangan' => $request->nama_ruangan,
+                'kapasitas' => $request->kapasitas,
+                'keterangan' => $request->keterangan,
+                'gambar' =>  $nama_file
+            ]);
+
+        return redirect('/admin')->with('status', 'Data Berhasil Dihapus!');
+    }
 }
