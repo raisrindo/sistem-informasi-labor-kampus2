@@ -1,41 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
-@if(Auth::user()->role_id=='0')
-<div id="app">
-
-    <!-- Navbar -->
-    <div class="col-md-12 mt-3">
-        <ul class="nav justify-content-center breadcrumb">
-            <li class="nav-item">
-                <a class="nav-link" href="{{url('admin')}}">Daftar Laboratorium</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{url('admin/pengajuan')}}">Daftar Pengajuan Peminjaman</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{url('admin/persetujuan')}}">Daftar Peminjaman yang Diterima</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Daftar Karyawan</a>
-            </li>
-        </ul>
-    </div>
-
-    <div class="col-md-12 mt-5">
-        <h1 align="center"><strong>SELAMAT DATANG <br> DI DASBOR ADMIN</strong></h1>
-        <h3 align="center"><strong>"Silahkan Pilih Menu Di Atas"</strong></h3>
-    </div>
-
-</div>
-
-
-
-
-@else
 <div class="container">
-
     <div class="row">
         <!-- Menampilkan judul Halaman -->
         <div class="col-md-12">
@@ -53,7 +19,6 @@
     </div>
 
     <div class="row justify-content-center">
-
         <!-- menampilkan daftar ruangan -->
         @foreach($ruangans as $ruangan)
         <div class="col-md-4 mt-3">
@@ -70,9 +35,8 @@
         </div>
         @endforeach
 
+
+
     </div>
-
-    @endif
-
 </div>
 @endsection

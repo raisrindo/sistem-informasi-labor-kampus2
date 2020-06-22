@@ -14,6 +14,11 @@ class RuanganController extends Controller
     //     $ruangans = Ruangan::all();
     // }
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function store(Request $request)
     {
         // $this->validate($request, [
