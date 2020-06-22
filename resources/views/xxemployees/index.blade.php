@@ -1,6 +1,8 @@
-@extends('admin.layouts.app')
+@extends('layout/main')
 
-@section('content')
+@section('title', 'Daftar Employee')
+
+@section('container')
 <div class="container">
   <div class="row">
     <div class="col-5">

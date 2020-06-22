@@ -51,6 +51,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/contact', 'HomeController@contact')->name('contact');
 Route::get('pinjam/{id}', 'pinjamController@index');
 Route::post('pinjam/{id}', 'pinjamController@pinjam');
 Route::get('profile', 'ProfileController@index');
@@ -74,3 +75,12 @@ Route::delete('/admin/{ruangan}', 'RuanganController@destroy');
 
 Route::get('/admin/{ruangan}', 'RuanganController@edit');
 Route::patch('/admin/{ruangan}', 'RuanganController@update');
+
+//Employee
+Route::get('/employees', 'EmployeesController@index');
+Route::get('/employees/create', 'EmployeesController@create');
+Route::get('/employees/{employee}', 'EmployeesController@show');
+Route::post('/employees', 'EmployeesController@store');
+Route::delete('/employees/{employee}', 'EmployeesController@destroy');
+Route::get('/employees/{employee}/edit', 'EmployeesController@edit');
+Route::patch('/employees/{employee}', 'EmployeesController@update');

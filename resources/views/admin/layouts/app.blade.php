@@ -104,7 +104,7 @@
                     <a class="nav-link" href="{{url('admin/persetujuan')}}">Daftar Peminjaman yang Diterima</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Daftar Karyawan</a>
+                    <a class="nav-link" href="{{url('/employees')}}">Daftar Karyawan</a>
                 </li>
 
             </ul>

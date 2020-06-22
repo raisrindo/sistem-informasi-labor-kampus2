@@ -2,38 +2,8 @@
 
 @section('content')
 
-@if(Auth::user()->role_id=='0')
-<div id="app">
+@if(Auth::user()->role_id=='1')
 
-    <!-- Navbar -->
-    <div class="col-md-12 mt-3">
-        <ul class="nav justify-content-center breadcrumb">
-            <li class="nav-item">
-                <a class="nav-link" href="{{url('admin')}}">Daftar Laboratorium</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{url('admin/pengajuan')}}">Daftar Pengajuan Peminjaman</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{url('admin/persetujuan')}}">Daftar Peminjaman yang Diterima</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Daftar Karyawan</a>
-            </li>
-        </ul>
-    </div>
-
-    <div class="col-md-12 mt-5">
-        <h1 align="center"><strong>SELAMAT DATANG <br> DI DASBOR ADMIN</strong></h1>
-        <h3 align="center"><strong>"Silahkan Pilih Menu Di Atas"</strong></h3>
-    </div>
-
-</div>
-
-
-
-
-@else
 <div class="container">
 
     <div class="row">
@@ -46,7 +16,8 @@
         <div class="col-md-12 mt-3">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item active"><a href="{{url('home')}} ">Home</a></li>
+                    <li class="mr-4"><a href="{{url('home')}} ">Home</a></li>
+                    <li class="mr-4"><a href="{{url('contact')}} ">Contact</a></li>
                 </ol>
             </nav>
         </div>
@@ -71,8 +42,40 @@
         @endforeach
 
     </div>
+</div>
 
-    @endif
+
+
+@else
+
+<div id="app">
+
+    <!-- Navbar -->
+    <div class="col-md-12 mt-3">
+        <ul class="nav justify-content-center breadcrumb">
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('admin')}}">Daftar Laboratorium</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('admin/pengajuan')}}">Daftar Pengajuan Peminjaman</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('admin/persetujuan')}}">Daftar Peminjaman yang Diterima</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('/employees')}}">Daftar Karyawan</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="col-md-12 mt-5">
+        <h1 align="center"><strong>SELAMAT DATANG <br> DI DASBOR ADMIN</strong></h1>
+        <h3 align="center"><strong>"Silahkan Pilih Menu Di Atas"</strong></h3>
+    </div>
 
 </div>
+
+
+@endif
+
 @endsection
