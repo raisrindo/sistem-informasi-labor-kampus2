@@ -117,7 +117,7 @@ class PinjamController extends Controller
         // return back()->with('success', 'Success Message');
         // swal("Oops!", "Something went wrong!", "error");
 
-        session()->flash('notif', 'Pengajuan Peminjaman Berhasil !');
+        session()->flash('notif', 'Pengajuan Peminjaman Berhasil. Tunggu Persetujuan Petugas !');
         return redirect('home');
     }
 
