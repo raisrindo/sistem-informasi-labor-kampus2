@@ -97,7 +97,8 @@
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
                         &times;
                     </button>
-                    <strong>Notification</strong> {{session()->get('notif') }}
+                    <strong>Notification</strong>
+                    {{session()->get('notif') }}
                 </div>
             </div>
             @endif

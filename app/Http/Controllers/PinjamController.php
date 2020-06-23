@@ -117,7 +117,7 @@ class PinjamController extends Controller
         // return back()->with('success', 'Success Message');
         // swal("Oops!", "Something went wrong!", "error");
 
-        session()->flash('notif', 'Pengajuan Peminjaman Berhasil');
+        session()->flash('notif', 'Pengajuan Peminjaman Berhasil !');
         return redirect('home');
     }
 
@@ -125,7 +125,8 @@ class PinjamController extends Controller
     {
         //return $employee;
         Peminjaman::destroy($peminjaman->id);
-        return redirect('/admin/pengajuan')->with('status', 'Data Berhasil Dihapus!');
+        session()->flash('notif', 'Data Berhasil Dihapus !');
+        return redirect('/admin/pengajuan');
     }
 
     // public function approve(Request $request, Peminjaman $peminjaman)
@@ -139,7 +140,8 @@ class PinjamController extends Controller
                 'status' => 1,
             ]);
 
-        return redirect('/admin/pengajuan')->with('status', 'Data Berhasil Dihapus!');
+        session()->flash('notif', 'Peminjaman Berhasil Disetujui !');
+        return redirect('/admin/pengajuan');
     }
     public function disapprove(Peminjaman $peminjaman)
     {
@@ -151,7 +153,8 @@ class PinjamController extends Controller
                 'status' => 0,
             ]);
 
-        return redirect('/admin/persetujuan')->with('status', 'Data Berhasil Dihapus!');
+        session()->flash('notif', 'Peminjaman Berhasil Dibatalkan !');
+        return redirect('/admin/persetujuan');
     }
 
 

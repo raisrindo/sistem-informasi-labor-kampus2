@@ -94,8 +94,8 @@ class RuanganController extends Controller
         //     ]);
         // }
 
-
-        return redirect('/admin')->with('status', 'Data Berhasil Ditambahkan!');
+        session()->flash('notif', 'Data Berhasil Ditambahkan !');
+        return redirect('/admin');
 
         //return $request;
     }
@@ -104,7 +104,8 @@ class RuanganController extends Controller
     {
         //return $employee;
         Ruangan::destroy($ruangan->id);
-        return redirect('/admin')->with('status', 'Data Berhasil Dihapus!');
+        session()->flash('notif', 'Data Berhasil Dihapus !');
+        return redirect('/admin');
     }
 
     public function edit(Ruangan $ruangan)
@@ -134,6 +135,7 @@ class RuanganController extends Controller
                 'gambar' =>  $nama_file
             ]);
 
-        return redirect('/admin')->with('status', 'Data Berhasil Dihapus!');
+        session()->flash('notif', 'Data Berhasil Diupdate!');
+        return redirect('/admin');
     }
 }

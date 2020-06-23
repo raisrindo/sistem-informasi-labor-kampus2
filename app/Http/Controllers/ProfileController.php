@@ -40,6 +40,7 @@ class ProfileController extends Controller
         }
         $user->update();
 
+        session()->flash('notif', 'Data Berhasil Disimpan !');
         return redirect('profile');
     }
 }

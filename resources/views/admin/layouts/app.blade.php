@@ -111,6 +111,18 @@
         </div>
 
         <main class="py-4">
+            @if( session()->has('notif') )
+            <div class="row justify-content-center mt-1 mb-3">
+                <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                        &times;
+                    </button>
+                    <strong>Notification</strong>
+                    {{session()->get('notif') }}
+                </div>
+            </div>
+            @endif
+
             @yield('content')
         </main>
     </div>
