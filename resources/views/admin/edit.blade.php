@@ -24,7 +24,7 @@
 
                 <div class="form-group">
                     <label for="nama_ruangan">Nama Ruangan</label>
-                    <input type="text" class="form-control @error('nama_ruangan') is-invalid @enderror " id="nama_ruangan" placeholder="Masukkan Nama Ruangan" name="nama_ruangan" value="{{$ruangan->nama_ruangan}}">
+                    <input type="text" readonly class="form-control @error('nama_ruangan') is-invalid @enderror " id="nama_ruangan" placeholder="Masukkan Nama Ruangan" name="nama_ruangan" value="{{$ruangan->nama_ruangan}}">
                     @error('nama_ruangan')
                     <div class="invalid-feedback">{{$message}}</div>
                     @enderror

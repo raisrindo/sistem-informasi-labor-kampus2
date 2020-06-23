@@ -31,7 +31,7 @@
                     <form action="/admin/{{$ruangan->id}}" method="post" class="d-inline">
                         @method('delete')
                         @csrf
-                        <button type="submit" class="btn btn-danger" onclick="return confirm('Anda Yakin Ingin Menghapus Data Ruangan ?'); ">Delete</button>
+                        <button type="submit" class="btn btn-danger" onclick="return confirm('Anda Yakin Ingin Menghapus Data Ruangan ? Menghapus Data Ruangan Akan Menghapus Semua Data yang Berhubungan Dengan Data Ruangan Ini !'); ">Delete</button>
                     </form>
                 </div>
             </div>

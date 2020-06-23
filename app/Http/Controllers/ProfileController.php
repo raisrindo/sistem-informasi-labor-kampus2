@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Auth;
 use App\User;
@@ -26,6 +27,13 @@ class ProfileController extends Controller
         $this->validate(
             $request,
             [
+                'name' => ['required', 'string', 'max:255'],
+                'email' => ['required', 'string', 'email', 'max:255'],
+                // 'nomorinduk' => ['required', 'unique:users'],
+                // 'nomorhp' => ['required', 'unique:users'],
+                'nomorinduk' => ['required'],
+                'nomorhp' => ['required'],
+
                 'password' => 'confirmed',
             ]
         );
