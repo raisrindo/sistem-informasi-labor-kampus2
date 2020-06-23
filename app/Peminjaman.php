@@ -15,6 +15,11 @@ class Peminjaman extends Model
         return $this->belongsTo('App\User', 'user_id', 'id');
     }
 
+    public function ruangan()
+    {
+        return $this->belongsTo('App\Ruangan', 'ruangan_id', 'id');
+    }
+
     public function peminjaman_detail()
     {
         return $this->hasMany('App\Peminjaman_detail', 'peminjaman_id', 'id');

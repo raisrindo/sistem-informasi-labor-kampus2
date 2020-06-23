@@ -16,4 +16,8 @@ class Ruangan extends Model
     {
         return $this->hasMany('App\Peminjaman_detail', 'ruangan_id', 'id');
     }
+    public function peminjaman()
+    {
+        return $this->hasMany('App\Peminjaman', 'ruangan_id', 'id');
+    }
 }
