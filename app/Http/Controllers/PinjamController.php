@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use App\Ruangan;
 use App\Peminjaman;
@@ -9,7 +10,9 @@ use App\Peminjaman;
 use Auth;
 use Carbon\Carbon;
 use App\User;
-// use Alert;
+use Alert;
+use Dotenv\Regex\Success;
+
 // use SweetAlert;
 
 class PinjamController extends Controller
@@ -84,9 +87,11 @@ class PinjamController extends Controller
         $user = User::where('id', Auth::user()->id)->First();
 
         if (empty($user->nomorinduk)) {
+            session()->flash('notif', 'Lengkapi Profil Terlebih Dahulu !');
             return redirect('profile');
         }
         if (empty($user->nomorhp)) {
+            session()->flash('notif', 'Lengkapi Profil Terlebih Dahulu !');
             return redirect('profile');
         }
 
@@ -108,7 +113,11 @@ class PinjamController extends Controller
         $peminjaman->status = 0;
         $peminjaman->save();
 
-        // Alert::success('Form Telah Terkirim', 'Pengajuan Peminjaman Berhasil');
+        // Alert::success('Terkirim', 'Berhasil');
+        // return back()->with('success', 'Success Message');
+        // swal("Oops!", "Something went wrong!", "error");
+
+        session()->flash('notif', 'Pengajuan Peminjaman Berhasil. Tunggu Persetujuan Petugas !');
         return redirect('home');
     }
 
@@ -116,7 +125,8 @@ class PinjamController extends Controller
     {
         //return $employee;
         Peminjaman::destroy($peminjaman->id);
-        return redirect('/admin/pengajuan')->with('status', 'Data Berhasil Dihapus!');
+        session()->flash('notif', 'Data Berhasil Dihapus !');
+        return redirect('/admin/pengajuan');
     }
 
     // public function approve(Request $request, Peminjaman $peminjaman)
@@ -130,7 +140,8 @@ class PinjamController extends Controller
                 'status' => 1,
             ]);
 
-        return redirect('/admin/pengajuan')->with('status', 'Data Berhasil Dihapus!');
+        session()->flash('notif', 'Peminjaman Berhasil Disetujui !');
+        return redirect('/admin/pengajuan');
     }
     public function disapprove(Peminjaman $peminjaman)
     {
@@ -142,7 +153,8 @@ class PinjamController extends Controller
                 'status' => 0,
             ]);
 
-        return redirect('/admin/persetujuan')->with('status', 'Data Berhasil Dihapus!');
+        session()->flash('notif', 'Peminjaman Berhasil Dibatalkan !');
+        return redirect('/admin/persetujuan');
     }
 
 

@@ -25,9 +25,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 
     <!-- sweet alert -->
-    <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script> -->
-
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </head>
 
@@ -90,6 +90,19 @@
         </nav>
 
         <main class="py-4">
+
+            @if( session()->has('notif') )
+            <div class="row justify-content-center">
+                <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                        &times;
+                    </button>
+                    <strong>Notification</strong>
+                    {{session()->get('notif') }}
+                </div>
+            </div>
+            @endif
+
             @yield('content')
         </main>
     </div>
@@ -97,7 +110,10 @@
     <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>    
     @include('sweet::alert') -->
     <!-- @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"]) -->
-    <!-- @include('sweet::alert') -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    @include('sweet::alert') 
+    @include('sweetalert::alert') -->
 
 </body>
 

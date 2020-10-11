@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Ruangan;
 use App\Employee;
+use Alert;
 
 class HomeController extends Controller
 {

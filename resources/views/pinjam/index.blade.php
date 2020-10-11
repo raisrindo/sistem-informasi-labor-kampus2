@@ -102,6 +102,10 @@
                                 <button type="submit" class="btn btn-success" onclick="return confirm('Anda Yakin Form Peminjaman Anda Sudah Benar ?'); ">Ajukan Peminjaman!</button>
                             </form>
 
+                            <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+                            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+                            @include('sweet::alert') -->
+
                         </div>
                     </div>
                 </div>
