@@ -60,6 +60,7 @@ Route::post('profile', 'ProfileController@update');
 Route::get('info/{id}', 'pinjamController@info');
 
 //admin
+// Route::get('/admin', 'AdminController@index')->middleware('role');
 Route::get('/admin', 'AdminController@index');
 
 Route::get('/admin/create', 'AdminController@create');

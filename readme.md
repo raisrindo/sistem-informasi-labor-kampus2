@@ -13,4 +13,5 @@ dibuat menggunakan Laravel
     b. atur base url : APP_URL=http://127.0.0.1:8000/
 5. jalankan perintah "php artisan key:generate"
 6. jalankan perintah "php artisan migrate"
-7. done
+7. jalankna perintah "php artisan serve" 
+8. buka http://127.0.0.1:8000/ di browser untuk menjalankan website
