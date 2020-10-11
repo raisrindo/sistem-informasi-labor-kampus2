@@ -30,6 +30,9 @@ class CreatePeminjamenTable extends Migration
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('ruangan_id')->references('id')->on('ruangans')->onDelete('cascade')->onUpdate('cascade');
+
+
+
             $table->foreign('user_nama')->references('name')->on('users')->onUpdate('cascade');
             // $table->foreign('user_nomorinduk')->references('nomorinduk')->on('users')->onUpdate('cascade');
             // $table->foreign('user_nomorhp')->references('nomorhp')->on('users')->onUpdate('cascade');
